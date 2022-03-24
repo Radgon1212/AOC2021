@@ -39,17 +39,11 @@ for i in range(len(segment)):
             digit[6] = set(temp[n])
         
     wire[4] = digit[6] - digit[5]
-
     wire[2] = digit[8] - digit[6]
-
     wire[6] = digit[9] - wire[0] - digit[4]
-
     wire[3] = digit[3] - digit[7] - wire[6]
-
     digit[2] = set.union(wire[0], wire[2], wire[3], wire[4], wire[6])
-
     digit[0] = digit[8] - wire[3]
-
     wire[5] = digit[7] - digit[2]
 
     for o in range(len(segment[i][1])):
@@ -62,31 +56,3 @@ for i in range(len(segment)):
 total = sum(int(element) for element in output)
 
 print(total)
-
-''' 
-digit   no          segments
-    0 = 6           a b c   e f g
-    1 = 2*              c     f
-x   2 = 5           a   c d e   g
-x   3 = 5           a   c d   f g
-    4 = 4*            b c d   f
-x   5 = 5           a b   d   f g
-x   6 = 6           a b   d e f g
-    7 = 3*          a   c     f
-    8 = 7*          a b c d e f g
-x   9 = 6           a b c d   f g
-
-7 - 1 =             a
-x3 - 7 =                  d     g
-x 9 - 3 =             b
-x  5 - abdg =                 f
-x   6 - 5 =                 e
-     
-
-[0] = 1
-[1] = 7
-[2] = 4
-[3 - 5] = len 5 (2,3,5)
-[6 - 8] = len 6 (0,6,9)
-[9] = 8
-'''
