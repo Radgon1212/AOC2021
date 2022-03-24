@@ -22,5 +22,3 @@ for j in range(days):
     timer[8] = temp
 
 print('Answer for part II:', sum(timer))
-#0 1 2 3 4 5 6 7 8
-#1 2 3 4 5 6 7 8 9 
